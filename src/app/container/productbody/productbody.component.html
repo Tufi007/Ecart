@@ -1,0 +1,70 @@
+<div class="container mt-5">
+  <div class="row ">
+    <div class="col-md-3 mt-5" *ngFor="let pro of products">
+      <div class="card">
+        <div class="image-container">
+          <div class="first">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="discount">{{pro.discountPrice}}</span>
+              <span class="wishlist"><i class="fa fa-heart-o"></i></span>
+            </div>
+          </div>
+
+          <img
+            [src]="pro.imageURL"
+            class="img-fluid rounded thumbnail-image"
+          />
+        </div>
+
+        <div class="product-detail-container p-2">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="dress-name">{{pro.name}}</h5>
+
+            <div class="d-flex flex-column mb-2">
+              <span class="new-price">${{pro.price}}</span>
+              <small class="old-price text-right">${{pro.price-(0.02*pro.price)}}</small>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center pt-1">
+            <h6 class="name text-left"> {{pro.brand}}</h6>
+            <h6 class="name text-left"> {{pro.gender}}</h6>
+          </div>
+          <div class="d-flex justify-content-between align-items-center pt-1">
+            <div class="color-select d-flex">
+              <input type="button" [name]="color" class="btn creme"  *ngFor="let color of pro.color"/>
+            </div>
+
+            <div class="d-flex">
+              <span class="item-size mr-2 btn" *ngFor="let s of pro.size" type="button">{{s}}</span>
+
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center pt-1">
+            <div>
+              <i class="fa fa-star-o rating-star"></i>
+              <span class="rating-number"  >{{rate()}}</span>
+            </div>
+
+            <span  [ngStyle]=" {colors: pro.is_in_inventory ? 'green' : 'red' }" class="buy">{{(pro.is_in_inventory ? 'BUY +' :'NOT Available')}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-3">
+        <div class="card voutchers">
+          <div class="voutcher-divider">
+            <div class="voutcher-left text-center">
+              <span class="voutcher-name">Monday Happy</span>
+              <h5 class="voutcher-code">#MONHPY</h5>
+            </div>
+            <div class="voutcher-right text-center border-left">
+              <h5 class="discount-percent">20%</h5>
+              <span class="off">Off</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
