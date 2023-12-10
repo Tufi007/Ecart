@@ -10,9 +10,11 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './productbody.component.css'
 })
 export class ProductbodyComponent {
-  rate = function rating(){
-    return Math.floor(Math.random()*6);
+
+  rating(){
+  return (Math.floor(Math.random()*6));
   }
+
   products = [
     {
       id: 1,

@@ -31,7 +31,7 @@
           </div>
           <div class="d-flex justify-content-between align-items-center pt-1">
             <div class="color-select d-flex">
-              <input type="button" [name]="color" class="btn creme"  *ngFor="let color of pro.color"/>
+              <input *ngFor="let color of pro.color" type="button" [name]="color" [style.background-color]="color" class="border-black" [ngClass]="{'btn':true,'ml-7':true}"  />
             </div>
 
             <div class="d-flex">
@@ -43,7 +43,7 @@
           <div class="d-flex justify-content-between align-items-center pt-1">
             <div>
               <i class="fa fa-star-o rating-star"></i>
-              <span class="rating-number"  >{{rate()}}</span>
+              <span class="rating-number"  ></span>
             </div>
 
             <span  [ngStyle]=" {colors: pro.is_in_inventory ? 'green' : 'red' }" class="buy">{{(pro.is_in_inventory ? 'BUY +' :'NOT Available')}}</span>
