@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import {HeaderComponent} from '../header/header.component'
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +14,10 @@ export class ProductbodyComponent {
   rating(){
   return (Math.floor(Math.random()*6));
   }
-
+@Input() search:string="";
+seesearch(){
+  console.log(this.search);
+}
   products = [
     {
       id: 1,

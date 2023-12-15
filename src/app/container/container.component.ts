@@ -15,5 +15,9 @@ import { FormsModule, NgModel, NgModelGroup } from '@angular/forms';
 export class ContainerComponent {
 links:string[] =["home","home","home","home","home","home"];
 
-
+searchtext(value:string){
+  // console.log(value);
+  this.search=value;
+}
+search:string="";
 }

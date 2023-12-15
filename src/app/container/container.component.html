@@ -1,4 +1,4 @@
 <app-topheader></app-topheader>
-<app-header></app-header>
-<app-productbody></app-productbody>
+<app-header (customsearchevent)="searchtext($event)"></app-header>
+<app-productbody [search]="search" ></app-productbody>
 <app-footer></app-footer>
